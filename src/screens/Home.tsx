@@ -18,6 +18,8 @@ import { Button } from '../components/Button';
 import { Filter } from '../components/Filter';
 import { Order, IOrder } from '../components/Order';
 
+import { useNavigation } from '@react-navigation/native';
+
 export function Home() {
   const { colors } = useTheme();
 
@@ -25,6 +27,12 @@ export function Home() {
     'open'
   );
   const [orders, setOrders] = useState<IOrder[]>();
+
+  const navigation = useNavigation();
+
+  function handleNewOrder() {
+    navigation.navigate('new');
+  }
 
   return (
     <VStack flex={1} pb={6} bg="gray.700">
@@ -87,7 +95,7 @@ export function Home() {
           )}
         />
 
-        <Button title="Nova solicitação" />
+        <Button title="Nova solicitação" onPress={handleNewOrder} />
       </VStack>
     </VStack>
   );
