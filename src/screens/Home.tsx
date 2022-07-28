@@ -24,14 +24,7 @@ export function Home() {
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>(
     'open'
   );
-  const [orders, setOrders] = useState<IOrder[]>([
-    {
-      id: '123',
-      patrimony: '14326',
-      when: '18/08/2022 - 10:00',
-      status: 'open',
-    },
-  ]);
+  const [orders, setOrders] = useState<IOrder[]>();
 
   return (
     <VStack flex={1} pb={6} bg="gray.700">
