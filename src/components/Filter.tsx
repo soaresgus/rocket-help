@@ -3,7 +3,7 @@ import { Text, Button, IButtonProps, useTheme } from 'native-base';
 interface FilterProps extends IButtonProps {
   title: string;
   isActive?: boolean;
-  type: 'open' | 'closed';
+  type?: 'primary' | 'secondary';
 }
 
 export function Filter({
@@ -15,7 +15,7 @@ export function Filter({
   const { colors } = useTheme();
 
   const colorType =
-    type === 'open' ? colors.secondary[700] : colors.purple[300];
+    type === 'primary' ? colors.secondary[700] : colors.purple[300];
   return (
     <Button
       variant="outline"
