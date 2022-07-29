@@ -7,12 +7,13 @@ import {
   Heading,
   FlatList,
   Center,
+  Image,
 } from 'native-base';
 
 import { ChatTeardropText, SignOut } from 'phosphor-react-native';
 import { useState, useEffect } from 'react';
 
-import Logo from '../assets/logo_secondary.svg';
+import Logo from '../assets/logo_secondary.png';
 import { Button } from '../components/Button';
 
 import { Filter } from '../components/Filter';
@@ -93,7 +94,7 @@ export function Home() {
         pb={5}
         px={6}
       >
-        <Logo />
+        <Image alt="Logotipo" source={Logo} w={200} h={12} />
 
         <IconButton
           icon={<SignOut size={26} color={colors.gray[300]} />}

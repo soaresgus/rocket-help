@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { Alert } from 'react-native';
 
-import { VStack, Heading, Icon, useTheme } from 'native-base';
+import { VStack, Heading, Icon, useTheme, Image } from 'native-base';
 
-import Logo from '../assets/logo_primary.svg';
+import Logo from '../assets/logo_primary.png';
 
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
@@ -51,9 +51,9 @@ export function SignIn() {
 
   return (
     <VStack flex={1} alignItems="center" bg="gray.600" px={8} pt={24}>
-      <Logo />
+      <Image alt="Logotipo" source={Logo} w={400} h={130} />
 
-      <Heading color="gray.100" fontSize="xl" mt={20} mb={6}>
+      <Heading color="gray.100" fontSize="xl" mt={10} mb={6}>
         Acesse sua conta
       </Heading>
 
