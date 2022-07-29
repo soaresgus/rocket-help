@@ -14,7 +14,8 @@ export function Filter({
 }: FilterProps) {
   const { colors } = useTheme();
 
-  const colorType = type === 'open' ? colors.secondary[700] : colors.green[300];
+  const colorType =
+    type === 'open' ? colors.secondary[700] : colors.purple[300];
   return (
     <Button
       variant="outline"

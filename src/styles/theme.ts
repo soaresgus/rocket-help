@@ -8,10 +8,10 @@ export const THEME = extendTheme({
     secondary: {
       700: '#FBA94C'
     },
-    green: {
-      700: '#00875F',
-      500: '#00B37E',
-      300: '#04D361',
+    purple: {
+      700: '#c24fc5',
+      500: '#d668d8',
+      300: '#eb82ec',
     },
     gray: {
       700: '#121214',

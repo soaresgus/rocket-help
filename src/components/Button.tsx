@@ -7,12 +7,12 @@ interface ButtonProps extends IButtonProps {
 export function Button({ title, ...props }: ButtonProps) {
   return (
     <NativeBaseButton
-      bg="green.700"
+      bg="purple.700"
       h={12}
       fontSize="sm"
       rounded="sm"
       _pressed={{
-        bg: 'green.500',
+        bg: 'purple.500',
       }}
       {...props}
     >

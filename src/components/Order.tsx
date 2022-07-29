@@ -28,7 +28,7 @@ interface OrderProps extends IPressableProps {
 export function Order({ data, ...props }: OrderProps) {
   const { colors } = useTheme();
   const statusColor =
-    data.status === 'open' ? colors.secondary[700] : colors.green[300];
+    data.status === 'open' ? colors.secondary[700] : colors.purple[300];
 
   return (
     <Pressable {...props}>
