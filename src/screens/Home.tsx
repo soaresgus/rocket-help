@@ -35,6 +35,7 @@ export function Home() {
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>(
     'open'
   );
+  const [groupSelected, setGroupSelected] = useState<'all' | 'mine'>('all');
   const [orders, setOrders] = useState<IOrder[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -114,18 +115,31 @@ export function Home() {
           <Text color="gray.200">{orders.length}</Text>
         </HStack>
 
-        <HStack space={3} mb={8}>
+        <HStack space={3} mb={3}>
           <Filter
-            type="open"
+            type="primary"
             title="Em andamento"
             onPress={() => setStatusSelected('open')}
             isActive={statusSelected === 'open'}
           />
           <Filter
-            type="closed"
+            type="secondary"
             title="Finalizados"
             onPress={() => setStatusSelected('closed')}
             isActive={statusSelected === 'closed'}
+          />
+        </HStack>
+
+        <HStack space={3} mb={8}>
+          <Filter
+            title="todas"
+            onPress={() => setGroupSelected('all')}
+            isActive={groupSelected === 'all'}
+          />
+          <Filter
+            title="MINHAS SOLICITAÇÕES"
+            onPress={() => setGroupSelected('mine')}
+            isActive={groupSelected === 'mine'}
           />
         </HStack>
 
@@ -144,7 +158,7 @@ export function Home() {
               <Center>
                 <ChatTeardropText color={colors.gray[300]} size={40} />
                 <Text color="gray.300" fontSize="xl" mt={6} textAlign="center">
-                  Você ainda não possuí {'\n'}
+                  {groupSelected === 'mine' ? 'Você a' : 'A'}inda não possuí
                   solicitações{' '}
                   {statusSelected === 'open' ? 'em andamento' : 'finalizadas'}
                 </Text>
