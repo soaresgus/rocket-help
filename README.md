@@ -17,8 +17,12 @@
 
 ## 👨‍🚀 Recursos
 
-- 💡 Intuitivo
-- ⚙️ Seguro
+- 💡 Autenticação de usuários
+- ⚙️ Criar novas solicitações
+- ⭐ Solucionar solicitações
+- 💻 Filtrar solicitações por status
+- ☕ Filtrar solicitações por criador
+- Entre outros...
 
 > O projeto consiste em um helpdesk para empresas, com o objetivo de facilitar os funcionários a receberem suporte técnico em seus equipamentos. Projeto realizado utilizando React Native e Firebase
 
@@ -28,6 +32,7 @@
 - <a href="https://firebase.google.com/">Firebase</a> (Banco de dados e autenticação)
 - <a href="https://expo.dev/">Expo</a> (Configuração e utilização da aplicação)
 - <a href="https://nativebase.io/">Native Base</a> (Estilização)
+- Entre outros...
 
 ## 💻 Pré-requisitos
 
