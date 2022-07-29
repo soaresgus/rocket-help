@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./src/assets/logo-secondary.png" width=568 height=368 alt="Logo grande">
+<img src="./.github/assets/logo_secondary.png" width=568 alt="Logo grande">
 </p>
 
 <h1 align="center">Rocket Help</h1>
@@ -34,6 +34,7 @@
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente do `Node / NPM`
+- Emulador de Android do Android Studio (<a href="#-utilização">Mais detalhes aqui</a>)
 
 ## 🚀 Instalando
 
@@ -51,12 +52,10 @@ npm install
 
 Para usar o Rocket Help, siga estas etapas:
 
-<aside>
 ⚠️ Para você utilizar a aplicação em um dispositivo será necessário a instalação de um emulador do Android Studio.
 Caso tenha interesse acesse esses guias em português para realizar a instalação:
-<a href="https://react-native.rocketseat.dev/android/windows#instala%C3%A7%C3%A3o">Guia de instalação do Android Studio</a>
-<a href="https://react-native.rocketseat.dev/virtual-devices/android-emulator">Guia de instalação emulador no Android Studio</a>
-<aside>
+<p><a href="https://react-native.rocketseat.dev/android/windows#instala%C3%A7%C3%A3o">Guia de instalação do Android Studio</a></p>
+<p><a href="https://react-native.rocketseat.dev/virtual-devices/android-emulator">Guia de instalação emulador no Android Studio</a></p>
 
 ```
 #Dentro do diretório do projeto
@@ -68,9 +67,9 @@ Ao executar o comando será apresentado um guia de comandos do Expo em seu termi
 ## 🖼️ Galeria
 
 <p align="center">
-  <img src="./.github/assets/readme/print-1.png" width=490 height=308 alt="Imagem de celular usando aplicação">
-  <img src="./.github/assets/readme/print-2.png" width=490 height=308 alt="Imagem de celular usando aplicação">
-  <img src="./.github/assets/readme/print-3.png" width=490 height=308 alt="Imagem de celular usando aplicação">
+  <img src="/.github/assets/print-1.png" width=390 height=624 alt="Imagem de celular usando aplicação">
+  <img src="/.github/assets/print-2.png" width=390 height=624 alt="Imagem de celular usando aplicação">
+  <img src="/.github/assets/print-3.png" width=390 height=624 alt="Imagem de celular usando aplicação">
 </p>
 
 ## 📫 Contribuindo
