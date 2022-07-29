@@ -6,7 +6,7 @@ export function dateFormat(timestamp: FirebaseFirestoreTypes.Timestamp) {
     if (timestamp) {
         const date = new Date(timestamp.toDate());
 
-        const dateFormatted = format(date, "dd'/'LL'/'uu' às 'HH':'MM':'SS", {
+        const dateFormatted = format(date, "dd'/'LL'/'uu' às 'HH':'MM':'ss", {
             locale: ptBR,
         })
 
