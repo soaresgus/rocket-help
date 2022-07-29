@@ -43,7 +43,7 @@ export function Header({ title, ...props }: HeaderProps) {
         textAlign="center"
         fontSize="lg"
         flex={1}
-        ml={-6}
+        mr={12}
       >
         {title}
       </Heading>
