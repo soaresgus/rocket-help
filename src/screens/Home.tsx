@@ -22,7 +22,7 @@ import { Loading } from '../components/Loading';
 
 import { useNavigation } from '@react-navigation/native';
 
-import auth from '@react-native-firebase/auth';
+import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
 import { Alert } from 'react-native';
@@ -38,6 +38,7 @@ export function Home() {
   const [groupSelected, setGroupSelected] = useState<'all' | 'mine'>('all');
   const [orders, setOrders] = useState<IOrder[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [loggedUser, setLoggedUser] = useState<FirebaseAuthTypes.User>();
 
   const navigation = useNavigation();
 
@@ -61,28 +62,63 @@ export function Home() {
   useEffect(() => {
     setIsLoading(true);
 
-    const subscriber = firestore()
-      .collection('orders')
-      .where('status', '==', statusSelected)
-      .onSnapshot((snapshot) => {
-        const data = snapshot.docs.map((doc) => {
-          const { patrimony, description, status, created_at } = doc.data();
+    auth().onAuthStateChanged((response) => {
+      setLoggedUser(response);
+    });
 
-          return {
-            id: doc.id,
-            patrimony,
-            description,
-            status,
-            when: dateFormat(created_at),
-          };
+    let subscriber;
+
+    if (groupSelected === 'mine') {
+      subscriber = firestore()
+        .collection('orders')
+        .where('status', '==', statusSelected)
+        .where('created_by_uid', '==', loggedUser.uid)
+        .onSnapshot((snapshot) => {
+          const data = snapshot.docs.map((doc) => {
+            const { patrimony, description, status, created_at } = doc.data();
+
+            return {
+              id: doc.id,
+              patrimony,
+              description,
+              status,
+              when: dateFormat(created_at),
+            };
+          });
+
+          setOrders(data);
+          setIsLoading(false);
         });
+    } else {
+      subscriber = firestore()
+        .collection('orders')
+        .where('status', '==', statusSelected)
+        .onSnapshot((snapshot) => {
+          const data = snapshot.docs.map((doc) => {
+            const {
+              patrimony,
+              description,
+              status,
+              created_at,
+              created_by_uid,
+            } = doc.data();
 
-        setOrders(data);
-        setIsLoading(false);
-      });
+            return {
+              id: doc.id,
+              patrimony,
+              description,
+              status,
+              when: dateFormat(created_at),
+            };
+          });
+
+          setOrders(data);
+          setIsLoading(false);
+        });
+    }
 
     return subscriber;
-  }, [statusSelected]);
+  }, [statusSelected, groupSelected]);
 
   return (
     <VStack flex={1} pb={6} bg="gray.700">
