@@ -7,4 +7,5 @@ export interface OrderFirestoreDTO {
     solution?: string;
     created_at: FirebaseFirestoreTypes.Timestamp;
     closed_at?: FirebaseFirestoreTypes.Timestamp;
+    created_by_uid: string;
 }
