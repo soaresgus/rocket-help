@@ -23,7 +23,7 @@ import {
   CircleWavyCheck,
   Hourglass,
   DesktopTower,
-  Clipboard,
+  ClipboardText,
 } from 'phosphor-react-native';
 
 interface RouteParams {
@@ -114,7 +114,7 @@ export function Details() {
 
   return (
     <VStack flex={1} bg="gray.700">
-      <Header title="Solicitação" />
+      <Header title="Solicitação" px={6} />
 
       <HStack bg="gray.500" justifyContent="center" p={4}>
         {order.status === 'closed' ? (
@@ -147,8 +147,8 @@ export function Details() {
         <CardDetails
           title="descrição do problema"
           description={order.description}
-          icon={Clipboard}
-          footer={`Aberto em ${order.when}`}
+          icon={ClipboardText}
+          footer={`Registrado em ${order.when}`}
         />
 
         <CardDetails
